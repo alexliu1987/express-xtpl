@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var xtpl = require('xtpl');
 
+var apis = require('./routes/api');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
@@ -26,6 +27,7 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/api', apis);
 app.use('/', routes);
 app.use('/users', users);
 
