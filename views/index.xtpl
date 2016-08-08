@@ -1,0 +1,4 @@
+{{extend ("./layout")}}
+{{#block ("body")}}
+	<div>this is {{title}}!</div>
+{{/block}}
